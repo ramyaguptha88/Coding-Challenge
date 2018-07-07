@@ -1,0 +1,59 @@
+<div *ngIf="showPage" class="container" style="padding-top: 1.4rem;">
+    <div class="row">
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card" style="width:4rem">
+                        <img class="card-img-top" [src]="selectedProfile.img" alt="Card image">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <button type="button" class="btn btn-dark">Send Message!</button>
+                    <br>
+                    <i class="fa fa-heart" aria-hidden="true" style="padding: 3px;"></i>
+                    <i class="fa fa-heart" aria-hidden="true" style="padding: 3px;"></i>
+                    <i class="fa fa-heart" aria-hidden="true" style="padding: 3px;"></i>
+                    <i class="fa fa-heart" aria-hidden="true" style="padding: 3px;"></i>
+                    <i class="fa fa-heart" aria-hidden="true" style="padding: 3px;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        
+        <div class="col-md-12" style="padding-top:15px; background-color: lightgrey;">
+            <p style="border-left:2px solid grey; color:#333;"><span style="padding-left: 5px; display: block;">{{selectedProfile.Description}}</span></p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Likes</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="selectedProfile.Likes">
+                    <tr *ngFor="let dtlLike of selectedProfile.Likes">
+                        <td>{{dtlLike}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>DisLikes</th>
+                    </tr>
+                </thead>
+                <tbody *ngIf="selectedProfile.Dislikes">
+                    <tr *ngFor="let dtlDisLike of selectedProfile.Dislikes">
+                        <td>{{dtlDisLike}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
